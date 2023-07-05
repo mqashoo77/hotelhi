@@ -1,14 +1,16 @@
-package com.example.hotelhi;
+package com.example.hotelhi.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ProfileActivity extends AppCompatActivity {
+import com.example.hotelhi.R;
+
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+    setContentView(R.layout.activity_home);
     }
 }

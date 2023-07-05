@@ -12,28 +12,34 @@
         android:theme="@style/Theme.Hotelhi"
         tools:targetApi="31">
         <activity
-            android:name=".HotelManagementActivity"
+            android:name=".activites.RoomManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".activites.HotelDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".BookingActivity"
+            android:name=".activites.HotelManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".activites.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".activites.BookingActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activites.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".activites.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activites.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,14 +1,16 @@
-package com.example.hotelhi;
+package com.example.hotelhi.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class RegistrationActivity extends AppCompatActivity {
+import com.example.hotelhi.R;
+
+public class SearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_search);
     }
 }
