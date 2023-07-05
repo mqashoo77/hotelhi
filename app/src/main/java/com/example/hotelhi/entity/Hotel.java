@@ -9,8 +9,9 @@ public class Hotel {
     private String phoneNumber;
     private String email;
     private String mainImage;
+    private int distanceFromCenter;
 
-    public Hotel(int hotelId, String name, String address, String city, String country, String phoneNumber, String email, String mainImage) {
+    public Hotel(int distanceFromCenter,int hotelId, String name, String address, String city, String country, String phoneNumber, String email, String mainImage) {
         this.hotelId = hotelId;
         this.name = name;
         this.address = address;
@@ -19,6 +20,15 @@ public class Hotel {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.mainImage = mainImage;
+        this.distanceFromCenter=distanceFromCenter;
+    }
+
+    public int getDistanceFromCenter() {
+        return distanceFromCenter;
+    }
+
+    public void setDistanceFromCenter(int distanceFromCenter) {
+        this.distanceFromCenter = distanceFromCenter;
     }
 
     public int getHotelId() {
