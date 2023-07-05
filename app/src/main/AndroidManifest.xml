@@ -24,7 +24,7 @@
             android:name=".activites.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".activites.BookingActivity"
+            android:name=".activites.BookingManagementActivity"
             android:exported="false" />
         <activity
             android:name=".activites.SearchActivity"
