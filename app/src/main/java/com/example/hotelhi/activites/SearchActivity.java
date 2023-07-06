@@ -133,6 +133,16 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
     }
 
     public void setButtons() {
+
+
+        personalImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SearchActivity.this,ProfileActivity.class);
+                startActivity(intent);
+
+            }
+        });
         chickOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
