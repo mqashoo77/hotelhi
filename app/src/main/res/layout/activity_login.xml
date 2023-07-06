@@ -25,9 +25,6 @@
         <EditText
             android:id="@+id/editTextPassword"
             style="@style/editTextStyle"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:textColorHint="@color/dark_grey"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
