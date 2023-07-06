@@ -44,6 +44,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/personalPhoto"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="24dp"
@@ -55,10 +56,11 @@
                     app:srcCompat="@drawable/colle2" />
 
                 <Button
-                    android:id="@+id/button"
-                    android:layout_width="250dp"
+
+                    android:id="@+id/searchButton"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="81dp"
+                    android:layout_marginEnd="220dp"
 
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/serach_btn"
@@ -94,9 +96,15 @@
                     <AutoCompleteTextView
                         android:id="@+id/cityAutoCompleteTextView"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
                         android:completionThreshold="1"
-                        android:inputType="text" />
+                        android:textSize="15sp"
+                        android:hint="Enter a city you want to visit"
+
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey" />
                 </LinearLayout>
 
 
@@ -124,7 +132,8 @@
                         android:textSize="12sp" />
 
                     <Button
-                        android:id="@+id/idBtnPickDateChickIn2"
+
+                        android:id="@+id/idBtnPickDateChickout"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_centerInParent="true"
@@ -132,7 +141,7 @@
                         android:gravity="left"
                         android:text="Pick Date"
                         android:textAllCaps="false"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/grey" />
 
                 </LinearLayout>
 
@@ -168,14 +177,14 @@
                         android:background="@color/white"
                         android:text="Pick Date"
                         android:textAllCaps="false"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/grey" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/linearLayout4"
                     android:layout_width="170dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginStart="31dp"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/rounded_corner"
@@ -183,7 +192,7 @@
                     android:paddingHorizontal="10dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintBottom_toTopOf="@+id/searchButton"
                     app:layout_constraintStart_toStartOf="parent">
 
                     <TextView
@@ -199,21 +208,21 @@
                         android:layout_height="30dp">
 
                         <Button
-                            android:background="@color/white"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="20sp"
-                            android:gravity="center"
                             android:id="@+id/btnMinus"
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center"
                             android:padding="5dp"
                             android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/txtNumbers"
+                            android:id="@+id/guestsNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
@@ -237,7 +246,7 @@
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@+id/txtNumbers"
+                            app:layout_constraintStart_toEndOf="@+id/guestsNumber"
                             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -248,15 +257,15 @@
                 <LinearLayout
                     android:id="@+id/li"
                     android:layout_width="170dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="21dp"
+                    android:layout_marginBottom="24dp"
                     android:background="@drawable/rounded_corner"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintBottom_toTopOf="@+id/searchButton"
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <TextView
@@ -267,11 +276,26 @@
                         android:textColor="#555555" />
 
                     <Spinner
-                        android:id="@+id/selectionSpinner"
+                        android:id="@+id/businessSpinner"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp" />
+                        android:layout_height="30dp"
+                        android:background="@color/black"
+                         />
 
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/filterButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="?attr/colorPrimary"
+                    android:gravity="bottom"
+                    android:text="Apply Filters"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
