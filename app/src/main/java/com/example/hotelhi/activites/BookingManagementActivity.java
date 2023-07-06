@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.hotelhi.R;
 
-public class BookingActivity extends AppCompatActivity {
+public class BookingManagementActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booking);
+        setContentView(R.layout.activity_booking_management);
     }
 }

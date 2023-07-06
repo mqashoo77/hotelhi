@@ -9,8 +9,27 @@ public class Hotel {
     private String phoneNumber;
     private String email;
     private String mainImage;
+    private int distanceFromCenter;
+    private int numOfRatings;
+    private double ratings;
 
-    public Hotel(int hotelId, String name, String address, String city, String country, String phoneNumber, String email, String mainImage) {
+    public int getNumOfRatings() {
+        return numOfRatings;
+    }
+
+    public void setNumOfRatings(int numOfRatings) {
+        this.numOfRatings = numOfRatings;
+    }
+
+    public double getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(double ratings) {
+        this.ratings = ratings;
+    }
+
+    public Hotel(int hotelId, String name, String address, String city, String country, String phoneNumber, String email, String mainImage, int distanceFromCenter, int numOfRatings, double ratings) {
         this.hotelId = hotelId;
         this.name = name;
         this.address = address;
@@ -19,6 +38,17 @@ public class Hotel {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.mainImage = mainImage;
+        this.distanceFromCenter = distanceFromCenter;
+        this.numOfRatings = numOfRatings;
+        this.ratings = ratings;
+    }
+
+    public int getDistanceFromCenter() {
+        return distanceFromCenter;
+    }
+
+    public void setDistanceFromCenter(int distanceFromCenter) {
+        this.distanceFromCenter = distanceFromCenter;
     }
 
     public int getHotelId() {
