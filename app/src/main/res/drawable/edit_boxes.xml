@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#CCFFFFFF" /> <!-- Set the background color with transparency (80% opaque) -->
+    <corners android:radius="8dp" /> <!-- Set the corner radius (adjust as desired) -->
+    <stroke
+        android:width="2dp"
+        android:color="#404040"
+    />
+</shape>

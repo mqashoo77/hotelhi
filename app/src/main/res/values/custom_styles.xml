@@ -4,5 +4,14 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="editTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_boxes</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:textColorHint">@color/dark_grey</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
 
 </resources>

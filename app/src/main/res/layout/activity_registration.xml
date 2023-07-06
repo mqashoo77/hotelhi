@@ -4,97 +4,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:background="?attr/colorPrimary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageViewProfile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"
-            android:padding="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/editTextFirstName"
-            app:layout_constraintVertical_bias="0.5" />
-
         <EditText
             android:id="@+id/editTextFirstName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/editTextStyle"
             android:hint="@string/first_name_hint"
             android:inputType="textPersonName"
-            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageViewProfile"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
         <EditText
             android:id="@+id/editTextLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/editTextStyle"
             android:hint="@string/last_name_hint"
             android:inputType="textPersonName"
-            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
             app:layout_constraintTop_toBottomOf="@id/editTextFirstName"
             app:layout_constraintVertical_bias="0.5" />
 
-        <EditText
-            android:id="@+id/editTextCountry"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/country_hint"
-            android:inputType="text"
-            android:padding="12dp"
+        <Spinner
+            android:id="@+id/countryPicker"
+            style="@style/editTextStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
             app:layout_constraintTop_toBottomOf="@id/editTextLastName"
+            app:layout_constraintBottom_toTopOf="@id/editTextPhoneNumber"
             app:layout_constraintVertical_bias="0.5" />
 
         <EditText
             android:id="@+id/editTextPhoneNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/editTextStyle"
             android:hint="@string/phone_number_hint"
             android:inputType="phone"
-            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextCountry"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintTop_toBottomOf="@id/countryPicker"
+            app:layout_constraintBottom_toTopOf="@id/editTextEmail"
             app:layout_constraintVertical_bias="0.5" />
 
         <EditText
             android:id="@+id/editTextEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/editTextStyle"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
-            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
             app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber"
+            app:layout_constraintBottom_toTopOf="@id/editTextPassword"
             app:layout_constraintVertical_bias="0.5" />
+
+
 
         <EditText
             android:id="@+id/editTextPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/editTextStyle"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
             app:layout_constraintTop_toBottomOf="@id/editTextEmail"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintBottom_toTopOf="@id/buttonRegister"
+            app:layout_constraintVertical_bias="0.5"/>
 
         <Button
             android:id="@+id/buttonRegister"
@@ -102,11 +86,14 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:text="@string/register_button"
-            android:background="?attr/colorPrimary"
+            android:textColor="@color/black"
+            android:background="@drawable/serach_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.5"
             app:layout_constraintTop_toBottomOf="@id/editTextPassword"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
