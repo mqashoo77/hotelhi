@@ -14,12 +14,14 @@ import java.util.ArrayList;
 
 public class Hotel_RecyclerViewAdapter extends RecyclerView.Adapter<Hotel_RecyclerViewAdapter.MyViewHolder> {
 
+    private final RecyclerViewInterface recyclerViewInterface;
     Context context;
     ArrayList<Hotel> hotels;
 
-    public Hotel_RecyclerViewAdapter(Context context, ArrayList<Hotel> hotels) {
+    public Hotel_RecyclerViewAdapter(Context context, ArrayList<Hotel> hotels,RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.hotels = hotels;
+        this.recyclerViewInterface=recyclerViewInterface;
     }
 
 
@@ -29,7 +31,7 @@ public class Hotel_RecyclerViewAdapter extends RecyclerView.Adapter<Hotel_Recycl
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_row, parent, false);
 
-        return new Hotel_RecyclerViewAdapter.MyViewHolder(view);
+        return new Hotel_RecyclerViewAdapter.MyViewHolder(view,recyclerViewInterface);
     }
 
     @Override
@@ -69,7 +71,7 @@ public class Hotel_RecyclerViewAdapter extends RecyclerView.Adapter<Hotel_Recycl
         TextView distance;
         TextView numberOfRatings;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             name = itemView.findViewById(R.id.hotelNameText);
@@ -78,6 +80,18 @@ public class Hotel_RecyclerViewAdapter extends RecyclerView.Adapter<Hotel_Recycl
             price = itemView.findViewById(R.id.priceText);
             distance = itemView.findViewById(R.id.distanceFromCenterText);
             numberOfRatings = itemView.findViewById(R.id.reviewsNumberText);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(recyclerViewInterface!=null){
+                        int position=getAdapterPosition();
+                        if(position!=RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(position);
+                        }
+                    }
+
+                }
+            });
         }
     }
 }
