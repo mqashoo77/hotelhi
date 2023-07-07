@@ -20,16 +20,18 @@
         <!-- Set HomeActivity as the launcher activity -->
         <activity
             android:name=".activites.HomeActivity"
-            android:exported="true">
+            android:exported="false"/>
+
+
+
+        <activity
+            android:name=".activites.SearchActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".activites.SearchActivity"
-            android:exported="true" />
         <activity
             android:name=".activites.RoomManagementActivity"
             android:exported="false" />

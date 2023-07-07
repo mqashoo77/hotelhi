@@ -44,6 +44,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/searchPesonalPhoto"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="24dp"
@@ -324,7 +325,7 @@
 
         <ImageButton
 
-            android:id="@+id/homeNavigationBtn"
+            android:id="@+id/searchHomeNavigationBtn"
             android:padding="5dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -334,7 +335,7 @@
             android:src="@drawable/icons8_home_50__2_" />
 
         <ImageButton
-            android:id="@+id/searchNavigationBtn"
+            android:id="@+id/searchSearchNavigationBtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -345,7 +346,7 @@
 
         <ImageButton
             android:padding="5dp"
-            android:id="@+id/registerNavigationBtn"
+            android:id="@+id/searchRegisterNavigationBtn"
             android:layout_width="0dp"
             android:background="?attr/colorPrimary"
             android:layout_height="match_parent"

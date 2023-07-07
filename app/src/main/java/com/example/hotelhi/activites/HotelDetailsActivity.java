@@ -46,6 +46,14 @@ public class HotelDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(HotelDetailsActivity.this,RoomBookingActivity.class);
+                startActivity(intent);
+            }
+        });
+        backHotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(HotelDetailsActivity.this,HomeActivity.class);
+                startActivity(intent);
             }
         });
 

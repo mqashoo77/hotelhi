@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -22,8 +21,6 @@ import com.example.hotelhi.R;
 import com.example.hotelhi.adapter.Hotel_RecyclerViewAdapter;
 import com.example.hotelhi.adapter.RecyclerViewInterface;
 import com.example.hotelhi.entity.Hotel;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -41,17 +38,18 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
     AutoCompleteTextView city;
     TextView numOfGuests;
     Spinner businessSpinner;
+    DatePickerDialog datePicker;
 
     ImageButton homeNavigationButton;
     ImageButton searchNavigationButton;
     ImageButton manageNavigationBookingButton;
-    DatePickerDialog datePicker;
+
 
 
     public void setNavigation() {
-        homeNavigationButton = findViewById(R.id.homeNavigationBtn);
-        searchNavigationButton = findViewById(R.id.searchNavigationBtn);
-        manageNavigationBookingButton = findViewById(R.id.registerNavigationBtn);
+        homeNavigationButton = findViewById(R.id.searchHomeNavigationBtn);
+        searchNavigationButton = findViewById(R.id.searchSearchNavigationBtn);
+        manageNavigationBookingButton = findViewById(R.id.searchRegisterNavigationBtn);
         searchNavigationButton.setImageResource(R.drawable.icons8_search_50);
         searchNavigationButton.setBackgroundColor(Color.WHITE);
 
@@ -206,7 +204,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         businessSpinner = findViewById(R.id.businessSpinner);
         chickInButton = findViewById(R.id.idBtnPickDateChickIn);
         chickOutButton = findViewById(R.id.idBtnPickDateChickout);
-        personalImage = findViewById(R.id.personalPhoto);
+        personalImage = findViewById(R.id.searchPesonalPhoto);
         search = findViewById(R.id.searchButton);
         plus = findViewById(R.id.btnPlus);
         negative = findViewById(R.id.btnMinus);

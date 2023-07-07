@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.speech.RecognitionListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -31,9 +30,9 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
     ImageButton manageNavigationBookingButton;
 
     public void setNavigation() {
-        homeNavigationButton = findViewById(R.id.homeNavigationBtn);
-        searchNavigationButton = findViewById(R.id.searchNavigationBtn);
-        manageNavigationBookingButton = findViewById(R.id.registerNavigationBtn);
+        homeNavigationButton = findViewById(R.id.homehomeNavigationBtn);
+        searchNavigationButton = findViewById(R.id.homesearchNavigationBtn);
+        manageNavigationBookingButton = findViewById(R.id.homeregisterNavigationBtn);
         homeNavigationButton.setImageResource(R.drawable.icons8_home_50__1_);
         homeNavigationButton.setBackgroundColor(Color.WHITE);
 
@@ -57,7 +56,7 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
     }
 
     public void setItems(){
-        personalImage=findViewById(R.id.personalPhoto);
+        personalImage=findViewById(R.id.homePersonalPhoto);
         getLuckyButton=findViewById(R.id.homeGetLuckyBtn);
 
         personalImage.setOnClickListener(new View.OnClickListener() {
