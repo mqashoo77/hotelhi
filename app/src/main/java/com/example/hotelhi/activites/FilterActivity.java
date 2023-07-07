@@ -81,9 +81,9 @@ public class FilterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 tenStars.setBackgroundResource(R.drawable.black_circler_container);
                 nineStars.setBackgroundResource(R.drawable.black_circler_container);
-                eightStars.setBackgroundResource(R.drawable.black_circler_container);
+                sixStars.setBackgroundResource(R.drawable.black_circler_container);
                 sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-                sixStars.setBackgroundResource(R.drawable.black_circler_selected);
+                eightStars.setBackgroundResource(R.drawable.black_circler_selected);
                 stars=8;
             }
         });
@@ -245,8 +245,7 @@ public class FilterActivity extends AppCompatActivity {
         });
     }
     public void setItems(){
-        toPrice.setText("10000");
-        fromPrice.setText("0");
+
         clearAll=findViewById(R.id.filterClearText);
         applyFilter=findViewById(R.id.filterApplyButton);
         wifiFilter=findViewById(R.id.filterWifi);
@@ -264,6 +263,8 @@ public class FilterActivity extends AppCompatActivity {
         toPrice=findViewById(R.id.filterToPrice);
         fromPrice=findViewById(R.id.filterFromPrice);
         backButton=findViewById(R.id.filterBckButton);
+        toPrice.setText("10000");
+        fromPrice.setText("0");
         setButtons();
     }
 
@@ -273,5 +274,6 @@ public class FilterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
+        setItems();
     }
 }
