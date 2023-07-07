@@ -30,6 +30,38 @@
 
                 <!-- Add your views and constraints here -->
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/searchFilterLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toEndOf="@+id/searchButton"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                    <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/icons8_filter_30" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Filter"
+                        android:textColor="#FBFBFB"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imageView22"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
@@ -284,18 +316,36 @@
 
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/filterButton"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/searchSortLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="?attr/colorPrimary"
-                    android:gravity="bottom"
-                    android:text="Apply Filters"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toEndOf="@+id/searchButton"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Sort"
+                        android:textColor="#FBFBFB"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imageView21"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView21"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/icons8_sort_64" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

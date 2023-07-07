@@ -1,6 +1,7 @@
 package com.example.hotelhi.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,7 +29,8 @@ import java.util.Calendar;
 public class SearchActivity extends AppCompatActivity implements RecyclerViewInterface {
 
     ArrayList<Hotel> hotels;
-    Button filterBtn;
+    ConstraintLayout filterLayout;
+    ConstraintLayout sortLayout;
     Button search;
     Button plus;
     Button negative;
@@ -177,18 +179,27 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
                 }
             }
         });
-        filterBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SearchActivity.this, FilterActivity.class);
-                startActivity(intent);
 
-            }
-        });
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+            }
+        });
+
+        sortLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SearchActivity.this,SortActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        filterLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SearchActivity.this,FilterActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -198,7 +209,8 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         datePicker = new DatePickerDialog(SearchActivity.this);
 
 
-        filterBtn = findViewById(R.id.filterButton);
+        filterLayout=findViewById(R.id.searchFilterLayout);
+        sortLayout=findViewById(R.id.searchSortLayout);
         city = findViewById(R.id.cityAutoCompleteTextView);
         numOfGuests = findViewById(R.id.guestsNumber);
         businessSpinner = findViewById(R.id.businessSpinner);
