@@ -1,0 +1,68 @@
+package com.example.hotelhi.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.hotelhi.R;
+import com.example.hotelhi.entity.Room;
+
+import java.util.ArrayList;
+
+public class RoomAdapter extends BaseAdapter {
+    private ArrayList<Room> rooms;
+    private Context context;
+
+    public RoomAdapter(Context context, ArrayList<Room> rooms) {
+        this.context = context;
+        this.rooms = rooms;
+    }
+
+    @Override
+    public int getCount() {
+        return rooms.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return rooms.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = convertView;
+        if (view == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.room_layout, null);
+        }
+
+        // Get references to views within the item layout
+        ImageView imageView = view.findViewById(R.id.roomViewImage);
+        TextView typeTextView = view.findViewById(R.id.roomViewType);
+        TextView descriptionTextView = view.findViewById(R.id.roomViewDescription);
+        TextView priceTextView = view.findViewById(R.id.roomViewPrice);
+        TextView priceBreakfastTextView = view.findViewById(R.id.roomViewPriceBreakfast);
+        Button choose=view.findViewById(R.id.roomViewButton);
+        Button chooseBreakfast=view.findViewById(R.id.roomViewBreakfastButton);
+
+        // Set data for the views
+        Room room = rooms.get(position);
+        imageView.setImageResource(R.drawable.iyvyne9jloqdphuk3gcp);
+        typeTextView.setText(room.getRoomType());
+        descriptionTextView.setText(room.getDescription());
+        priceTextView.setText(String.valueOf(room.getPricePerNight()));
+        priceBreakfastTextView.setText(String.valueOf(room.getPricePerNight()*1.2));
+
+        return view;
+    }
+}

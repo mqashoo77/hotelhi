@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Hotelhi"
         tools:targetApi="31">
         <activity
-            android:name=".SortActivity"
+            android:name=".activites.SortActivity"
             android:exported="false" />
         <activity
             android:name=".activites.FilterActivity"
@@ -32,6 +32,9 @@
         </activity>
         <activity
             android:name=".activites.RoomManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.RoomBookingActivity"
             android:exported="false" />
         <activity
             android:name=".activites.HotelDetailsActivity"

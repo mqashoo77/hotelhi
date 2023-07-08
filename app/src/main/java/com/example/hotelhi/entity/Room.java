@@ -9,8 +9,10 @@ public class Room {
     private double pricePerNight;
     private String availabilityStatus;
     private String image;
+    private String description;
 
-    public Room(int roomId, int hotelId, String roomNumber, String roomType, int capacity, double pricePerNight, String availabilityStatus, String image) {
+    public Room(int roomId, int hotelId, String roomNumber, String roomType, int capacity, double pricePerNight, String availabilityStatus, String image,String description) {
+        this.description=description;
         this.roomId = roomId;
         this.hotelId = hotelId;
         this.roomNumber = roomNumber;
@@ -19,6 +21,14 @@ public class Room {
         this.pricePerNight = pricePerNight;
         this.availabilityStatus = availabilityStatus;
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getRoomId() {

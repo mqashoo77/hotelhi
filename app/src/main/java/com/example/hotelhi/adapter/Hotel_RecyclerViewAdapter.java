@@ -73,7 +73,7 @@ public class Hotel_RecyclerViewAdapter extends RecyclerView.Adapter<Hotel_Recycl
 
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.roomViewImage);
             name = itemView.findViewById(R.id.hotelNameText);
             rating = itemView.findViewById(R.id.ratingText);
             score = itemView.findViewById(R.id.scoreText);

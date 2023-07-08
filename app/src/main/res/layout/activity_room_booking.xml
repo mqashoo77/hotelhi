@@ -5,6 +5,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activites.RoomBookingActivity">
 
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout3"
+      android:layout_width="409dp"
+      android:layout_height="70dp"
+      android:layout_marginStart="1dp"
+      android:layout_marginTop="1dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/roomHotelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:text="Hotel Name"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/roomBackButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/roomBackButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_left_24" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="28dp"
+        app:layout_constraintStart_toEndOf="@+id/roomBackButton"
+        app:layout_constraintTop_toBottomOf="@+id/roomHotelName"
+        app:srcCompat="@drawable/icons8_location_24" />
+
+    <TextView
+        android:id="@+id/roomHotelLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="1dp"
+        android:text="Hotel Location"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/imageView20"
+        app:layout_constraintTop_toBottomOf="@+id/roomHotelName" />
   </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <View
+
+      android:id="@+id/myView3"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="70dp"
+      android:background="@android:color/black"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ListView
+      android:id="@+id/roomListView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
