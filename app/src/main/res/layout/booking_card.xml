@@ -2,9 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:layout_margin="8dp"
-    android:background="@color/white">
+    android:layout_height="170dp"
+    android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/imageRoom"
+            android:id="@+id/imageRoomBooking"
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:contentDescription="Room Image"
@@ -22,7 +21,7 @@
             app:srcCompat="@drawable/iyvyne9jloqdphuk3gcp" />
 
         <TextView
-            android:id="@+id/txtHotelName"
+            android:id="@+id/txtHotelNameBooking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -30,62 +29,61 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageRoom"
+            app:layout_constraintStart_toEndOf="@+id/imageRoomBooking"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtHotelDescription"
+            android:id="@+id/txtHotelDescriptionBooking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
-            android:text="best room in the city with great view and great comfy beds, services: Sauna, 3 meals a day"
+            android:text="best room in the city with great view and great comfy beds. Services: Sauna, 3 meals a day"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageRoom"
-            app:layout_constraintTop_toBottomOf="@+id/txtHotelName" />
+            app:layout_constraintStart_toEndOf="@+id/imageRoomBooking"
+            app:layout_constraintTop_toBottomOf="@+id/txtHotelNameBooking" />
 
         <TextView
-            android:id="@+id/txtArriveLabel"
+            android:id="@+id/txtArriveLabelBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:text="Arrive:"
-            app:layout_constraintStart_toStartOf="@+id/imageRoom"
-            app:layout_constraintTop_toBottomOf="@id/imageRoom" />
+            app:layout_constraintBottom_toTopOf="@id/txtLeaveLabelBooking"
+            app:layout_constraintStart_toStartOf="@+id/imageRoomBooking" />
 
         <TextView
-            android:id="@+id/txtArriveDate"
+            android:id="@+id/txtArriveDateBooking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="15-6-2023 16:00"
-            app:layout_constraintBottom_toBottomOf="@+id/txtArriveLabel"
-            app:layout_constraintStart_toEndOf="@+id/txtArriveLabel"
-            app:layout_constraintTop_toTopOf="@+id/txtArriveLabel" />
+            app:layout_constraintBottom_toBottomOf="@+id/txtArriveLabelBooking"
+            app:layout_constraintStart_toEndOf="@+id/txtArriveLabelBooking"
+            app:layout_constraintTop_toTopOf="@+id/txtArriveLabelBooking" />
 
         <TextView
-            android:id="@+id/txtLeaveLabel"
+            android:id="@+id/txtLeaveLabelBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginBottom="4dp"
             android:text="Leave:"
-            app:layout_constraintStart_toStartOf="@+id/imageRoom"
-            app:layout_constraintTop_toBottomOf="@+id/txtArriveLabel" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageRoomBooking" />
 
         <TextView
-            android:id="@+id/txtLeaveDate"
+            android:id="@+id/txtLeaveDateBooking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="19-6-2023 09:00"
-            app:layout_constraintBottom_toBottomOf="@+id/txtLeaveLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLeaveLabelBooking"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txtLeaveLabel"
-            app:layout_constraintTop_toTopOf="@+id/txtLeaveLabel" />
+            app:layout_constraintStart_toEndOf="@+id/txtLeaveLabelBooking"
+            app:layout_constraintTop_toTopOf="@+id/txtLeaveLabelBooking" />
 
 
         <Button
-            android:id="@+id/btnCancel"
+            android:id="@+id/btnCancelBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/serach_btn"
@@ -95,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/txtPrice"
+            android:id="@+id/txtPriceBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -103,7 +101,17 @@
             android:text="429.99$"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnCancel" />
+            app:layout_constraintEnd_toStartOf="@+id/btnCancelBooking" />
+
+        <View
+            android:id="@+id/lineBooking"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnCancelBooking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

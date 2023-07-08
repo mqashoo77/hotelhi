@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity implements RecyclerViewInterface {
 
-    ArrayList<Hotel>hotels;
+    ArrayList<Hotel> hotels;
     ImageView personalImage;
     Button getLuckyButton;
     RecyclerView recyclerView;
@@ -55,14 +55,14 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
 
     }
 
-    public void setItems(){
-        personalImage=findViewById(R.id.homePersonalPhoto);
-        getLuckyButton=findViewById(R.id.homeGetLuckyBtn);
+    public void setItems() {
+        personalImage = findViewById(R.id.homePersonalPhoto);
+        getLuckyButton = findViewById(R.id.homeGetLuckyBtn);
 
         personalImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HomeActivity.this,ProfileActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
         getLuckyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HomeActivity.this,HotelDetailsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HotelDetailsActivity.class);
                 startActivity(intent);
             }
         });
@@ -80,10 +80,10 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_home);
-    recyclerView=findViewById(R.id.highRatedRecycler);
-    setItems();
-    setNavigation();
+        setContentView(R.layout.activity_home);
+        recyclerView = findViewById(R.id.highRatedRecycler);
+        setItems();
+        setNavigation();
         hotels = new ArrayList<>();
 
         {
@@ -109,8 +109,8 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void onItemClick(int position) {
-        Intent intent=new Intent(HomeActivity.this,HotelDetailsActivity.class);
-        intent.putExtra("Hotel_id",hotels.get(position).getHotelId());
+        Intent intent = new Intent(HomeActivity.this, HotelDetailsActivity.class);
+        intent.putExtra("Hotel_id", hotels.get(position).getHotelId());
         startActivity(intent);
 
 
