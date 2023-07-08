@@ -1,0 +1,111 @@
+<!-- item_booking.xml -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="8dp"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSecondaryVariant"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imageRoom"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:contentDescription="Room Image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/iyvyne9jloqdphuk3gcp" />
+
+        <TextView
+            android:id="@+id/txtHotelName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Hotel Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageRoom"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtHotelDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:text="best room in the city with great view and great comfy beds, services: Sauna, 3 meals a day"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageRoom"
+            app:layout_constraintTop_toBottomOf="@+id/txtHotelName" />
+
+        <TextView
+            android:id="@+id/txtArriveLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Arrive:"
+            app:layout_constraintStart_toStartOf="@+id/imageRoom"
+            app:layout_constraintTop_toBottomOf="@id/imageRoom" />
+
+        <TextView
+            android:id="@+id/txtArriveDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="15-6-2023 16:00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtArriveLabel"
+            app:layout_constraintStart_toEndOf="@+id/txtArriveLabel"
+            app:layout_constraintTop_toTopOf="@+id/txtArriveLabel" />
+
+        <TextView
+            android:id="@+id/txtLeaveLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Leave:"
+            app:layout_constraintStart_toStartOf="@+id/imageRoom"
+            app:layout_constraintTop_toBottomOf="@+id/txtArriveLabel" />
+
+        <TextView
+            android:id="@+id/txtLeaveDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="19-6-2023 09:00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLeaveLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtLeaveLabel"
+            app:layout_constraintTop_toTopOf="@+id/txtLeaveLabel" />
+
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/serach_btn"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            android:text="429.99$"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
