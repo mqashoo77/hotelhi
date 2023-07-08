@@ -28,7 +28,7 @@ import java.util.Calendar;
 
 public class SearchActivity extends AppCompatActivity implements RecyclerViewInterface {
 
-    ArrayList<Hotel> hotels;
+    public ArrayList<Hotel> hotels;
     ConstraintLayout filterLayout;
     ConstraintLayout sortLayout;
     Button search;
@@ -45,7 +45,6 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
     ImageButton homeNavigationButton;
     ImageButton searchNavigationButton;
     ImageButton manageNavigationBookingButton;
-
 
 
     public void setNavigation() {
@@ -74,7 +73,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
 
     }
 
-    public void setChickOutButton(){
+    public void setChickOutButton() {
         final Calendar calendar = Calendar.getInstance();
 
 
@@ -85,11 +84,10 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
             @Override
             public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
                 // adding the selected date in the edittext
-                if(chickInButton.getText().equals("Pick Date")){
+                if (chickInButton.getText().equals("Pick Date")) {
                     chickInButton.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                     chickOutButton.setTextColor(Color.BLACK);
-                }
-                else{
+                } else {
                     chickOutButton.setTextColor(Color.BLACK);
                     chickOutButton.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
 
@@ -106,7 +104,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
 
     }
 
-    public void setChickInButton(){
+    public void setChickInButton() {
         final Calendar calendar = Calendar.getInstance();
 
 
@@ -138,7 +136,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         personalImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SearchActivity.this,ProfileActivity.class);
+                Intent intent = new Intent(SearchActivity.this, ProfileActivity.class);
                 startActivity(intent);
 
             }
@@ -190,7 +188,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         sortLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SearchActivity.this,SortActivity.class);
+                Intent intent = new Intent(SearchActivity.this, SortActivity.class);
                 startActivity(intent);
             }
         });
@@ -198,7 +196,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         filterLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SearchActivity.this,FilterActivity.class);
+                Intent intent = new Intent(SearchActivity.this, FilterActivity.class);
                 startActivity(intent);
             }
         });
@@ -209,8 +207,8 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         datePicker = new DatePickerDialog(SearchActivity.this);
 
 
-        filterLayout=findViewById(R.id.searchFilterLayout);
-        sortLayout=findViewById(R.id.searchSortLayout);
+        filterLayout = findViewById(R.id.searchFilterLayout);
+        sortLayout = findViewById(R.id.searchSortLayout);
         city = findViewById(R.id.cityAutoCompleteTextView);
         numOfGuests = findViewById(R.id.guestsNumber);
         businessSpinner = findViewById(R.id.businessSpinner);

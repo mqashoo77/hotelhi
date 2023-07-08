@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.hotelhi.R;
 import com.example.hotelhi.entity.Hotel;
-
+import com.example.hotelhi.service.HotelService;
 
 
 public class HotelDetailsActivity extends AppCompatActivity {
@@ -27,15 +27,15 @@ public class HotelDetailsActivity extends AppCompatActivity {
 
     Hotel hotel;
 
-    void setItems(){
-        backHotel=findViewById(R.id.hotelBackBtn);
-        hotelName1=findViewById(R.id.hotelNameText1);
-        hotelName2=findViewById(R.id.hotelNameText2);
-        hotelCityText=findViewById(R.id.hotelCityText);
-        hotelRatingText=findViewById(R.id.hotelRatingText);
-        hotelNumRatingText=findViewById(R.id.hotelNumOfRatingsText);
-        hotelPriceText=findViewById(R.id.priceHotelText);
-        hotelChooseRoomBtn=findViewById(R.id.hotelRoomBtn);
+    void setItems() {
+        backHotel = findViewById(R.id.hotelBackBtn);
+        hotelName1 = findViewById(R.id.hotelNameText1);
+        hotelName2 = findViewById(R.id.hotelNameText2);
+        hotelCityText = findViewById(R.id.hotelCityText);
+        hotelRatingText = findViewById(R.id.hotelRatingText);
+        hotelNumRatingText = findViewById(R.id.hotelNumOfRatingsText);
+        hotelPriceText = findViewById(R.id.priceHotelText);
+        hotelChooseRoomBtn = findViewById(R.id.hotelRoomBtn);
         hotelName2.setText(hotel.getName());
         hotelName1.setText(hotel.getName());
         hotelCityText.setText(hotel.getCity());
@@ -45,14 +45,15 @@ public class HotelDetailsActivity extends AppCompatActivity {
         hotelChooseRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HotelDetailsActivity.this,RoomBookingActivity.class);
+                Intent intent = new Intent(HotelDetailsActivity.this, RoomBookingActivity.class);
+                intent.putExtra("Hotel_id", hotel.getHotelId());
                 startActivity(intent);
             }
         });
         backHotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HotelDetailsActivity.this,HomeActivity.class);
+                Intent intent = new Intent(HotelDetailsActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
@@ -63,8 +64,10 @@ public class HotelDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_details);
-        hotel = new Hotel(1, "Example Hotel", "123 Example Street", "Example City", "Example Country", "123-456-7890", "info@example.com", "example_image.jpg", 5, 100, 4.5);
         setItems();
+        Intent intent=getIntent();
+        int hotelId = intent.getIntExtra("Hotel_id", 1);
+        hotel=HotelService.getHotelById(hotelId);
 
     }
 }

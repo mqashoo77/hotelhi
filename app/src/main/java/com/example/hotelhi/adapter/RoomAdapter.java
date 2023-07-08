@@ -1,6 +1,7 @@
 package com.example.hotelhi.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hotelhi.R;
+import com.example.hotelhi.activites.RoomBookingActivity;
+import com.example.hotelhi.activites.SearchActivity;
+import com.example.hotelhi.entity.Booking;
 import com.example.hotelhi.entity.Room;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class RoomAdapter extends BaseAdapter {
     private ArrayList<Room> rooms;
@@ -54,7 +61,50 @@ public class RoomAdapter extends BaseAdapter {
         TextView priceBreakfastTextView = view.findViewById(R.id.roomViewPriceBreakfast);
         Button choose=view.findViewById(R.id.roomViewButton);
         Button chooseBreakfast=view.findViewById(R.id.roomViewBreakfastButton);
+        double price=rooms.get(position).getPricePerNight();
 
+
+
+
+
+        /***********************************/
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        int guestId=1;
+        Date checkInDate=calendar.getTime();
+        Date checkOutDate=calendar.getTime();
+        int numOfGuests=1;
+
+
+
+
+
+        /*********************************/
+        choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price,"Done","keep door open");
+                Intent intent=new Intent(context, SearchActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        chooseBreakfast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price*1.20,"Done","keep door open");
+                Intent intent=new Intent(context, SearchActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+
+        chooseBreakfast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price*.2,"Done","keep door open");
+                Intent intent=new Intent(context, SearchActivity.class);
+                context.startActivity(intent);
+            }
+        });
         // Set data for the views
         Room room = rooms.get(position);
         imageView.setImageResource(R.drawable.iyvyne9jloqdphuk3gcp);
