@@ -64,10 +64,11 @@ public class HotelDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_details);
-        setItems();
         Intent intent=getIntent();
         int hotelId = intent.getIntExtra("Hotel_id", 1);
         hotel=HotelService.getHotelById(hotelId);
+        setItems();
+
 
     }
 }
