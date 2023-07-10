@@ -25,39 +25,42 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
 
-
+    private Button dontHaveAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
 
-        email = findViewById(R.id.editTextEmail);
-        password = findViewById(R.id.editTextPassword);
+        email = findViewById(R.id.editTextEmailLogin);
+        password = findViewById(R.id.editTextPasswordLogin);
         login = findViewById(R.id.buttonLogin);
+        dontHaveAccount = findViewById(R.id.buttonNoAccount);
         mAuth = FirebaseAuth.getInstance();
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String txt_email = email.getText().toString();
-                String txt_password = password.getText().toString();
-                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
-                    Toast.makeText(LoginActivity.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
-                } else {
-                    loginUser(txt_email, txt_password);
-                }
+
+        login.setOnClickListener(view -> {
+            String txt_email = email.getText().toString();
+            String txt_password = password.getText().toString();
+            if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
+                Toast.makeText(LoginActivity.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
+            } else {
+                loginUser(txt_email, txt_password);
             }
         });
+
+        dontHaveAccount.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+            startActivity(intent);
+        });
+
 
     }
 
     private void loginUser(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                finish();
-            }
+        mAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(authResult -> {
+            System.out.println(authResult.getUser().getEmail());
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            finish();
         });
     }
 }
