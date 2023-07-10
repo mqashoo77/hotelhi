@@ -56,36 +56,33 @@ public class RoomAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.room_layout, null);
         }
 
-        // Get references to views within the item layout
         ImageView imageView = view.findViewById(R.id.roomViewImage);
         TextView typeTextView = view.findViewById(R.id.roomViewType);
         TextView descriptionTextView = view.findViewById(R.id.roomViewDescription);
         TextView priceTextView = view.findViewById(R.id.roomViewPrice);
         TextView priceBreakfastTextView = view.findViewById(R.id.roomViewPriceBreakfast);
-        Button choose=view.findViewById(R.id.roomViewButton);
-        Button chooseBreakfast=view.findViewById(R.id.roomViewBreakfastButton);
-        double price=rooms.get(position).getPricePerNight();
-
-
-        SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs",MODE_PRIVATE);
+        Button choose = view.findViewById(R.id.roomViewButton);
+        Button chooseBreakfast = view.findViewById(R.id.roomViewBreakfastButton);
+        double price = rooms.get(position).getPricePerNight();
+        SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", MODE_PRIVATE);
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        int guestId=1;
-        Date checkInDate=new Date(sharedPreferences.getLong("in_date", 0));
-        Date checkOutDate=new Date(sharedPreferences.getLong("out_date", 0));
-        int numOfGuests=sharedPreferences.getInt("num_of_guests",1);
+        int guestId = 1;
+        Date checkInDate = new Date(sharedPreferences.getLong("in_date", 0));
+        Date checkOutDate = new Date(sharedPreferences.getLong("out_date", 0));
+        int numOfGuests = sharedPreferences.getInt("num_of_guests", 1);
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price,"Done","keep door open");
-                Intent intent=new Intent(context, SearchActivity.class);
+                Booking booking = new Booking(0, guestId, rooms.get(position).getRoomId(), checkInDate, checkOutDate, numOfGuests, price, "Done", "keep door open");
+                Intent intent = new Intent(context, SearchActivity.class);
                 context.startActivity(intent);
             }
         });
         chooseBreakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price*1.20,"Done","keep door open");
-                Intent intent=new Intent(context, SearchActivity.class);
+                Booking booking = new Booking(0, guestId, rooms.get(position).getRoomId(), checkInDate, checkOutDate, numOfGuests, price * 1.20, "Done", "keep door open");
+                Intent intent = new Intent(context, SearchActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -94,9 +91,9 @@ public class RoomAdapter extends BaseAdapter {
         chooseBreakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price*.2,"Done","keep door open");
+                Booking booking = new Booking(0, guestId, rooms.get(position).getRoomId(), checkInDate, checkOutDate, numOfGuests, price * .2, "Done", "keep door open");
 
-                Intent intent=new Intent(context, SearchActivity.class);
+                Intent intent = new Intent(context, SearchActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -106,7 +103,7 @@ public class RoomAdapter extends BaseAdapter {
         typeTextView.setText(room.getRoomType());
         descriptionTextView.setText(room.getDescription());
         priceTextView.setText(String.valueOf(room.getPricePerNight()));
-        priceBreakfastTextView.setText(String.valueOf(room.getPricePerNight()*1.2));
+        priceBreakfastTextView.setText(String.valueOf(room.getPricePerNight() * 1.2));
 
         return view;
     }

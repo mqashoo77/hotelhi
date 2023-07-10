@@ -253,7 +253,7 @@ public class FilterActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 int startPrice = Integer.parseInt(fromPrice.getText().toString());
                 int endPrice = Integer.parseInt(toPrice.getText().toString());
-                if(startPrice>endPrice){
+                if (startPrice > endPrice) {
                     return;
                 }
                 editor.putInt("stars", stars);
@@ -317,8 +317,8 @@ public class FilterActivity extends AppCompatActivity {
         if (previousStars == 10) {
             setTenStars();
         }
-        int priceLow=sharedPreferences.getInt("from_price",0);
-        int priceHigh=sharedPreferences.getInt("to_price",0);
+        int priceLow = sharedPreferences.getInt("from_price", 0);
+        int priceHigh = sharedPreferences.getInt("to_price", 0);
         fromPrice.setText(Integer.toString(priceLow));
         toPrice.setText(Integer.toString(priceHigh));
 

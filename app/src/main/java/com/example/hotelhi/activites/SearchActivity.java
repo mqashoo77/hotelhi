@@ -133,8 +133,9 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         datePicker.show();
 
     }
-    public void clear(){
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs",MODE_PRIVATE);
+
+    public void clear() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("sort");
         editor.remove("stars");
@@ -143,12 +144,12 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         editor.apply();
     }
 
-    public Date stringToDate(String date){
+    public Date stringToDate(String date) {
         String[] dateArray = date.split("/");
-        int year,month,day;
-        year=Integer.parseInt(dateArray[2]);
-        month=Integer.parseInt(dateArray[1]);
-        day=Integer.parseInt(dateArray[0]);
+        int year, month, day;
+        year = Integer.parseInt(dateArray[2]);
+        month = Integer.parseInt(dateArray[1]);
+        day = Integer.parseInt(dateArray[0]);
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month - 1, day); // Subtract 1 from the month value to account for zero-based indexing
 
@@ -156,43 +157,43 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         return returnDate;
 
     }
-    public void setSearchBtn(){
-        String cityName=city.getText().toString();
-        int numberOfGuests=Integer.parseInt(numOfGuests.getText().toString());
-        String chickInDate=chickInButton.getText().toString();
-        String chickOut=chickOutButton.getText().toString();
-        if(cityName.equals("")||numberOfGuests==0||chickOut.equals("Pick Date")||chickInDate.equals("Pick Date")){
+
+    public void setSearchBtn() {
+        String cityName = city.getText().toString();
+        int numberOfGuests = Integer.parseInt(numOfGuests.getText().toString());
+        String chickInDate = chickInButton.getText().toString();
+        String chickOut = chickOutButton.getText().toString();
+        if (cityName.equals("") || numberOfGuests == 0 || chickOut.equals("Pick Date") || chickInDate.equals("Pick Date")) {
             return;
         }
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String nameOfCity = sharedPreferences.getString("city", null);
         if (cityName != null) {
             if (!cityName.equals(nameOfCity)) {
                 clear();
             }
-        }
-        else{
+        } else {
             return;
         }
-        Date in=stringToDate(chickInDate);
-        Date out=stringToDate(chickOut);
+        Date in = stringToDate(chickInDate);
+        Date out = stringToDate(chickOut);
         int comparisonResult = in.compareTo(out);
         if (!(comparisonResult < 0)) {
             return;
         }
-        String sort=sharedPreferences.getString("sort", "");
-        int priceFrom=sharedPreferences.getInt("from_price",0);
-        int toPrice=sharedPreferences.getInt("to_price",10000);
-        int stars=sharedPreferences.getInt("stars",0);
-        hotels= HotelService.filterHotel(in,out,cityName,numberOfGuests,stars,sort,priceFrom,toPrice);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
-        editor.putString("city",cityName);
-        editor.putInt("num_of_guests",numberOfGuests);
+        String sort = sharedPreferences.getString("sort", "");
+        int priceFrom = sharedPreferences.getInt("from_price", 0);
+        int toPrice = sharedPreferences.getInt("to_price", 10000);
+        int stars = sharedPreferences.getInt("stars", 0);
+        hotels = HotelService.filterHotel(in, out, cityName, numberOfGuests, stars, sort, priceFrom, toPrice);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("city", cityName);
+        editor.putInt("num_of_guests", numberOfGuests);
         long dateInMillis = in.getTime();
-        editor.putLong("in_date",dateInMillis);
+        editor.putLong("in_date", dateInMillis);
         dateInMillis = out.getTime();
-        editor.putLong("out_date",dateInMillis);
+        editor.putLong("out_date", dateInMillis);
         editor.apply();
 
 
@@ -304,26 +305,26 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
     @Override
     protected void onResume() {
         super.onResume();
-
-        // Get the SharedPreferences instance
-        SharedPreferences sharedPreferences = getSharedPreferences("MyActivityPrefs",MODE_PRIVATE);
-        numOfGuests.setText(sharedPreferences.getString("numOfGuests","1"));
-        chickInButton.setText(sharedPreferences.getString("dateIn","Pick Date"));
-        chickOutButton.setText(sharedPreferences.getString("dateOut","Pick Date"));
-        city.setText(sharedPreferences.getString("city",""));
+        SharedPreferences sharedPreferences = getSharedPreferences("MyActivityPrefs", MODE_PRIVATE);
+        numOfGuests.setText(sharedPreferences.getString("numOfGuests", "1"));
+        chickInButton.setText(sharedPreferences.getString("dateIn", "Pick Date"));
+        chickOutButton.setText(sharedPreferences.getString("dateOut", "Pick Date"));
+        city.setText(sharedPreferences.getString("city", ""));
     }
+
     @Override
     protected void onPause() {
         super.onPause();
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyActivityPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("numOfGuests",numOfGuests.getText().toString());
-        editor.putString("dateIn",chickInButton.getText().toString());
-        editor.putString("dateOut",chickOutButton.getText().toString());
-        editor.putString("city",city.getText().toString());
+        editor.putString("numOfGuests", numOfGuests.getText().toString());
+        editor.putString("dateIn", chickInButton.getText().toString());
+        editor.putString("dateOut", chickOutButton.getText().toString());
+        editor.putString("city", city.getText().toString());
         editor.apply();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
