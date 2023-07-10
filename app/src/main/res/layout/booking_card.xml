@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtHotelDescriptionBooking"
+            android:id="@+id/txtRoomDescriptionBooking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -86,8 +86,8 @@
             android:id="@+id/btnCancelBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/serach_btn"
-            android:text="Cancel"
+            android:background="@drawable/main_button"
+            android:text="@string/cancel_button"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -97,10 +97,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="10dp"
             android:text="429.99$"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@id/btnCancelBooking"
             app:layout_constraintEnd_toStartOf="@+id/btnCancelBooking" />
 
         <View

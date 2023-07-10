@@ -47,7 +47,7 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.ViewHo
         Room room = getRoomById(booking.getRoomId());
         if (room != null) {
             holder.txtHotelName.setText(getHotelName(room.getHotelId()));
-            holder.txtHotelDescription.setText(room.getDescription());
+            holder.txtRoomDescription.setText(room.getDescription());
         }
 
         // Set booking details
@@ -78,7 +78,7 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageRoom;
         public TextView txtHotelName;
-        public TextView txtHotelDescription;
+        public TextView txtRoomDescription;
         public TextView txtArriveDate;
         public TextView txtLeaveDate;
         public TextView txtPrice;
@@ -88,7 +88,7 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.ViewHo
             super(itemView);
             imageRoom = itemView.findViewById(R.id.imageRoomBooking);
             txtHotelName = itemView.findViewById(R.id.txtHotelNameBooking);
-            txtHotelDescription = itemView.findViewById(R.id.txtHotelDescriptionBooking);
+            txtRoomDescription = itemView.findViewById(R.id.txtRoomDescriptionBooking);
             txtArriveDate = itemView.findViewById(R.id.txtArriveDateBooking);
             txtLeaveDate = itemView.findViewById(R.id.txtLeaveDateBooking);
             txtPrice = itemView.findViewById(R.id.txtPriceBooking);

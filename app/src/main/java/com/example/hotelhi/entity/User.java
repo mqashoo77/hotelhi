@@ -9,6 +9,16 @@ public class User {
     private String email;
     private String image;
 
+    public User(int id, String firstName, String lastName, String country, String phoneNumber, String email, String image) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.country = country;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.image = image;
+    }
+
     public int getId() {
         return id;
     }

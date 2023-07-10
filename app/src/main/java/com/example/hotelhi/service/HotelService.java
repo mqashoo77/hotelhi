@@ -3,8 +3,14 @@ package com.example.hotelhi.service;
 import com.example.hotelhi.entity.Booking;
 import com.example.hotelhi.entity.Hotel;
 import com.example.hotelhi.entity.Room;
+import com.example.hotelhi.entity.User;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class HotelService {
 
@@ -61,6 +67,48 @@ public class HotelService {
 
     public static void bookRoom(Booking booking){
 
+    }
+
+    public static List<User> getUsers() {
+        List<User> userList = new ArrayList<>();
+
+        userList.add(new User(1, "Mohammed", "Ali", "Egypt", "+20123456789", "mohammed@example.com", "image1"));
+        userList.add(new User(2, "Fatima", "Ahmed", "Saudi Arabia", "+966987654321", "fatima@example.com", "image2"));
+        userList.add(new User(3, "Yousef", "Khalid", "United Arab Emirates", "+971555555555", "yousef@example.com", "image3"));
+        userList.add(new User(4, "Leila", "Rahman", "Qatar", "+97433333333", "leila@example.com", "image4"));
+        userList.add(new User(5, "Omar", "Hassan", "Kuwait", "+96577777777", "omar@example.com", "image5"));
+
+        return userList;
+    }
+
+    public static List<Booking> getBookingsForUser(int userId) {
+        List<Booking> bookingList = new ArrayList<>();
+
+        bookingList.add(new Booking(1, 1, 2, new Date(), addRandomDays(), 2, 200.0, "Paid", ""));
+        bookingList.add(new Booking(2, 2, 4, new Date(), addRandomDays(), 1, 150.0, "Pending", "Early check-in requested"));
+        bookingList.add(new Booking(3, 3, 1, new Date(), addRandomDays(), 3, 300.0, "Paid", ""));
+        bookingList.add(new Booking(4, 1, 2, new Date(), addRandomDays(), 2, 220.0, "Paid", ""));
+        bookingList.add(new Booking(5, 1, 5, new Date(), addRandomDays(), 1, 180.0, "Paid", ""));
+        bookingList.add(new Booking(6, 5, 8, new Date(), addRandomDays(), 2, 200.0, "Paid", ""));
+        bookingList.add(new Booking(7, 4, 10, new Date(), addRandomDays(), 1, 150.0, "Pending", "Early check-in requested"));
+        bookingList.add(new Booking(8, 1, 7, new Date(), addRandomDays(), 3, 300.0, "Paid", ""));
+        bookingList.add(new Booking(9, 2, 6, new Date(), addRandomDays(), 2, 220.0, "Paid", ""));
+        bookingList.add(new Booking(10, 1, 9, new Date(), addRandomDays(), 1, 180.0, "Paid", ""));
+
+
+        return bookingList.stream().filter(b -> b.getUserId() == userId).collect(Collectors.toList());
+    }
+
+    public static Date addRandomDays() {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MINUTE, getRandomNumber());
+        return calendar.getTime();
+    }
+
+    private static int getRandomNumber() {
+        Random random = new Random();
+        return random.nextInt(10000) + 1;
     }
 
 }

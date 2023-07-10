@@ -441,7 +441,7 @@
             android:layout_marginStart="191dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:background="@drawable/serach_btn"
+            android:background="@drawable/main_button"
             android:text="Apply Filters"
             android:textColor="#090505"
             android:textStyle="bold"
