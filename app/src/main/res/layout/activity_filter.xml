@@ -190,7 +190,7 @@
         android:background="@drawable/black_circler_container"
         android:orientation="horizontal"
         android:padding="5dp"
-        app:layout_constraintStart_toEndOf="@+id/filterEightStars"
+        app:layout_constraintStart_toEndOf="@+id/filterSevenStars"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView
@@ -217,7 +217,7 @@
         android:background="@drawable/black_circler_container"
         android:orientation="horizontal"
         android:padding="5dp"
-        app:layout_constraintStart_toEndOf="@+id/filterNineStars"
+        app:layout_constraintStart_toEndOf="@+id/filterEightStars"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutas">
 
         <ImageView
@@ -271,7 +271,7 @@
         android:background="@drawable/black_circler_container"
         android:orientation="horizontal"
         android:padding="5dp"
-        app:layout_constraintStart_toEndOf="@+id/filterSevenStars"
+        app:layout_constraintStart_toEndOf="@+id/filterNineStars"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView

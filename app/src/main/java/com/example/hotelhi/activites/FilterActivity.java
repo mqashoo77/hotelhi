@@ -43,21 +43,66 @@ public class FilterActivity extends AppCompatActivity {
     Button applyFilter;
 
 
-    public void storeServicePref(){
-        String s="";
-        if(lockersSelected){
-            s+="lockers_";
+    public void storeServicePref() {
+        String s = "";
+        if (lockersSelected) {
+            s += "lockers_";
         }
-        if(swimmingSelected)s+="swimming_";
-        if(airSelected)s+="ari_";
-        if(luggageSelected)s+="luggage_";
-        if(barSelected)s+="bar_";
-        if(breakfastSelected)s+="breakfast_";
-        if(wifiSelected)s+="wifi_";
-        SharedPreferences sharedPreferences=getSharedPreferences("my_pref",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
-        editor.putString("service",s);
+        if (swimmingSelected) s += "swimming_";
+        if (airSelected) s += "ari_";
+        if (luggageSelected) s += "luggage_";
+        if (barSelected) s += "bar_";
+        if (breakfastSelected) s += "breakfast_";
+        if (wifiSelected) s += "wifi_";
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("service", s);
         editor.apply();
+    }
+
+    public void setSixStars() {
+        tenStars.setBackgroundResource(R.drawable.black_circler_container);
+        nineStars.setBackgroundResource(R.drawable.black_circler_container);
+        eightStars.setBackgroundResource(R.drawable.black_circler_container);
+        sevenStars.setBackgroundResource(R.drawable.black_circler_container);
+        sixStars.setBackgroundResource(R.drawable.black_circler_selected);
+        stars = 6;
+    }
+
+    public void setSevenStars() {
+        tenStars.setBackgroundResource(R.drawable.black_circler_container);
+        nineStars.setBackgroundResource(R.drawable.black_circler_container);
+        eightStars.setBackgroundResource(R.drawable.black_circler_container);
+        sixStars.setBackgroundResource(R.drawable.black_circler_container);
+        sevenStars.setBackgroundResource(R.drawable.black_circler_selected);
+        stars = 7;
+    }
+
+    public void setEightStars() {
+        tenStars.setBackgroundResource(R.drawable.black_circler_container);
+        nineStars.setBackgroundResource(R.drawable.black_circler_container);
+        sixStars.setBackgroundResource(R.drawable.black_circler_container);
+        sevenStars.setBackgroundResource(R.drawable.black_circler_container);
+        eightStars.setBackgroundResource(R.drawable.black_circler_selected);
+        stars = 8;
+    }
+
+    public void setNineStars() {
+        tenStars.setBackgroundResource(R.drawable.black_circler_container);
+        sixStars.setBackgroundResource(R.drawable.black_circler_container);
+        eightStars.setBackgroundResource(R.drawable.black_circler_container);
+        sevenStars.setBackgroundResource(R.drawable.black_circler_container);
+        nineStars.setBackgroundResource(R.drawable.black_circler_selected);
+        stars = 9;
+    }
+
+    public void setTenStars() {
+        sixStars.setBackgroundResource(R.drawable.black_circler_container);
+        nineStars.setBackgroundResource(R.drawable.black_circler_container);
+        eightStars.setBackgroundResource(R.drawable.black_circler_container);
+        sevenStars.setBackgroundResource(R.drawable.black_circler_container);
+        tenStars.setBackgroundResource(R.drawable.black_circler_selected);
+        stars = 10;
     }
 
     public void setButtons() {
@@ -73,56 +118,31 @@ public class FilterActivity extends AppCompatActivity {
         sixStars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tenStars.setBackgroundResource(R.drawable.black_circler_container);
-                nineStars.setBackgroundResource(R.drawable.black_circler_container);
-                eightStars.setBackgroundResource(R.drawable.black_circler_container);
-                sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-                sixStars.setBackgroundResource(R.drawable.black_circler_selected);
-                stars = 6;
+                setSixStars();
             }
         });
         sevenStars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tenStars.setBackgroundResource(R.drawable.black_circler_container);
-                nineStars.setBackgroundResource(R.drawable.black_circler_container);
-                eightStars.setBackgroundResource(R.drawable.black_circler_container);
-                sixStars.setBackgroundResource(R.drawable.black_circler_container);
-                sevenStars.setBackgroundResource(R.drawable.black_circler_selected);
-                stars = 7;
+                setSevenStars();
             }
         });
         eightStars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tenStars.setBackgroundResource(R.drawable.black_circler_container);
-                nineStars.setBackgroundResource(R.drawable.black_circler_container);
-                sixStars.setBackgroundResource(R.drawable.black_circler_container);
-                sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-                eightStars.setBackgroundResource(R.drawable.black_circler_selected);
-                stars = 8;
+                setEightStars();
             }
         });
         nineStars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tenStars.setBackgroundResource(R.drawable.black_circler_container);
-                sixStars.setBackgroundResource(R.drawable.black_circler_container);
-                eightStars.setBackgroundResource(R.drawable.black_circler_container);
-                sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-                nineStars.setBackgroundResource(R.drawable.black_circler_selected);
-                stars = 9;
+                setNineStars();
             }
         });
         tenStars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sixStars.setBackgroundResource(R.drawable.black_circler_container);
-                nineStars.setBackgroundResource(R.drawable.black_circler_container);
-                eightStars.setBackgroundResource(R.drawable.black_circler_container);
-                sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-                tenStars.setBackgroundResource(R.drawable.black_circler_selected);
-                stars = 10;
+                setTenStars();
             }
         });
         lockersFilter.setOnClickListener(new View.OnClickListener() {
@@ -229,13 +249,16 @@ public class FilterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 storeServicePref();
-                SharedPreferences sharedPreferences=getSharedPreferences("my_pref",MODE_PRIVATE);
-                SharedPreferences.Editor editor=sharedPreferences.edit();
-                int startPrice=Integer.parseInt(fromPrice.getText().toString());
-                int endPrice=Integer.parseInt(toPrice.getText().toString());
-                editor.putInt("stars",stars);
-                editor.putInt("from_price",startPrice);
-                editor.putInt("to_price",endPrice);
+                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                int startPrice = Integer.parseInt(fromPrice.getText().toString());
+                int endPrice = Integer.parseInt(toPrice.getText().toString());
+                if(startPrice>endPrice){
+                    return;
+                }
+                editor.putInt("stars", stars);
+                editor.putInt("from_price", startPrice);
+                editor.putInt("to_price", endPrice);
                 editor.apply();
                 Intent intent = new Intent(FilterActivity.this, SearchActivity.class);
                 startActivity(intent);
@@ -266,14 +289,39 @@ public class FilterActivity extends AppCompatActivity {
         lockersSelected = false;
         toPrice.setText("10000");
         fromPrice.setText("0");
-        SharedPreferences sharedPreferences=getSharedPreferences("my_pref",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
-        editor.putString("service","");
-        editor.putString("stars","0");
-        editor.putInt("from_price",0);
-        editor.putInt("to_price",10000);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("service", "");
+        editor.putInt("stars", 0);
+        editor.putInt("from_price", 0);
+        editor.putInt("to_price", 10000);
 
         editor.apply();
+    }
+
+    public void setPrevious() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        int previousStars = sharedPreferences.getInt("stars", 0);
+        if (previousStars == 6) {
+            setSixStars();
+        }
+        if (previousStars == 7) {
+            setSevenStars();
+        }
+        if (previousStars == 8) {
+            setEightStars();
+        }
+        if (previousStars == 9) {
+            setNineStars();
+        }
+        if (previousStars == 10) {
+            setTenStars();
+        }
+        int priceLow=sharedPreferences.getInt("from_price",0);
+        int priceHigh=sharedPreferences.getInt("to_price",0);
+        fromPrice.setText(Integer.toString(priceLow));
+        toPrice.setText(Integer.toString(priceHigh));
+
     }
 
     public void setItems() {
@@ -298,6 +346,7 @@ public class FilterActivity extends AppCompatActivity {
         toPrice.setText("10000");
         fromPrice.setText("0");
         setButtons();
+        setPrevious();
     }
 
 

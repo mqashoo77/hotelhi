@@ -173,7 +173,7 @@
                         android:gravity="left"
                         android:text="Pick Date"
                         android:textAllCaps="false"
-                        android:textColor="@color/grey" />
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
 
@@ -201,15 +201,15 @@
                         android:textSize="12sp" />
 
                     <Button
-                        android:gravity="left"
                         android:id="@+id/idBtnPickDateChickIn"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_centerInParent="true"
                         android:background="@color/white"
+                        android:gravity="left"
                         android:text="Pick Date"
                         android:textAllCaps="false"
-                        android:textColor="@color/grey" />
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
 

@@ -1,7 +1,10 @@
 package com.example.hotelhi.adapter;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,21 +67,12 @@ public class RoomAdapter extends BaseAdapter {
         double price=rooms.get(position).getPricePerNight();
 
 
-
-
-
-        /***********************************/
+        SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs",MODE_PRIVATE);
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
         int guestId=1;
-        Date checkInDate=calendar.getTime();
-        Date checkOutDate=calendar.getTime();
-        int numOfGuests=1;
-
-
-
-
-
-        /*********************************/
+        Date checkInDate=new Date(sharedPreferences.getLong("in_date", 0));
+        Date checkOutDate=new Date(sharedPreferences.getLong("out_date", 0));
+        int numOfGuests=sharedPreferences.getInt("num_of_guests",1);
         choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,6 +95,7 @@ public class RoomAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Booking booking=new Booking(0,guestId,rooms.get(position).getRoomId(),checkInDate,checkOutDate,numOfGuests,price*.2,"Done","keep door open");
+
                 Intent intent=new Intent(context, SearchActivity.class);
                 context.startActivity(intent);
             }
