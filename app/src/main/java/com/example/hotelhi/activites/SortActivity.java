@@ -19,21 +19,41 @@ public class SortActivity extends AppCompatActivity {
     LinearLayout bestRated;
     LinearLayout distanceFromCityCenter;
 
-    public void storePrefSort(String s){
-        SharedPreferences sharedPreferences=getSharedPreferences("my_prefs",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
-        editor.putString("sort",s);
+    public void storePrefSort(String s) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("sort", s);
         editor.apply();
     }
+
+    public void makeBold() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String sort = sharedPreferences.getString("sort", "");
+        System.out.println(sort);
+        if (sort.equals("distance_from_center")) {
+            distanceFromCityCenter.setBackgroundResource(R.drawable.black_circler_selected);
+        } else if (sort.equals("best_rated")) {
+            bestRated.setBackgroundResource(R.drawable.black_circler_selected);
+        } else if (sort.equals("lowest_price")) {
+            lowestPrice.setBackgroundResource(R.drawable.black_circler_selected);
+        } else if (sort.equals("highest_price")) {
+            highestPrice.setBackgroundResource(R.drawable.black_circler_selected);
+        }
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sort);
+
         backButton = findViewById(R.id.sortBckButton);
         lowestPrice = findViewById(R.id.sortLowestPrice);
         highestPrice = findViewById(R.id.sortHighestPrice);
         bestRated = findViewById(R.id.sortBestRated);
         distanceFromCityCenter = findViewById(R.id.sortDistanceFromCenter);
+        makeBold();
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
