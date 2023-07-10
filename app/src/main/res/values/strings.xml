@@ -13,4 +13,6 @@
     <string name="home_image_string">icons8_register_50__1_</string>
     <string name="country_spinner_description">Country</string>
     <string name="cancel_button">Cancel</string>
+    <string name="no_account">Dont have an account?</string>
+    <string name="has_account">I have an account</string>
 </resources>

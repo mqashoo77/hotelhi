@@ -19,6 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.8"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextLastName"
             app:layout_constraintVertical_bias="0.5" />
 
         <EditText
@@ -30,6 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.8"
             app:layout_constraintTop_toBottomOf="@id/editTextFirstName"
+            app:layout_constraintBottom_toTopOf="@id/countryPicker"
             app:layout_constraintVertical_bias="0.5" />
 
         <Spinner
@@ -93,6 +95,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.5"
             app:layout_constraintTop_toBottomOf="@id/editTextPassword"
+            app:layout_constraintVertical_bias="0.5"/>
+
+        <Button
+            android:id="@+id/buttonHasAccount"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/has_account"
+            android:textColor="@color/black"
+            android:background="@drawable/second_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintTop_toBottomOf="@id/buttonRegister"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.5"/>
 

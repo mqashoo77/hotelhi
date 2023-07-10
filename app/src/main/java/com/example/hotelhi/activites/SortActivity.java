@@ -31,13 +31,13 @@ public class SortActivity extends AppCompatActivity {
         String sort = sharedPreferences.getString("sort", "");
         System.out.println(sort);
         if (sort.equals("distance_from_center")) {
-            distanceFromCityCenter.setBackgroundResource(R.drawable.black_circler_selected);
+            distanceFromCityCenter.setBackgroundResource(R.drawable.second_button);
         } else if (sort.equals("best_rated")) {
-            bestRated.setBackgroundResource(R.drawable.black_circler_selected);
+            bestRated.setBackgroundResource(R.drawable.second_button);
         } else if (sort.equals("lowest_price")) {
-            lowestPrice.setBackgroundResource(R.drawable.black_circler_selected);
+            lowestPrice.setBackgroundResource(R.drawable.second_button);
         } else if (sort.equals("highest_price")) {
-            highestPrice.setBackgroundResource(R.drawable.black_circler_selected);
+            highestPrice.setBackgroundResource(R.drawable.second_button);
         }
     }
 

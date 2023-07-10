@@ -65,7 +65,7 @@ public class FilterActivity extends AppCompatActivity {
         nineStars.setBackgroundResource(R.drawable.black_circler_container);
         eightStars.setBackgroundResource(R.drawable.black_circler_container);
         sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-        sixStars.setBackgroundResource(R.drawable.black_circler_selected);
+        sixStars.setBackgroundResource(R.drawable.second_button);
         stars = 6;
     }
 
@@ -74,7 +74,7 @@ public class FilterActivity extends AppCompatActivity {
         nineStars.setBackgroundResource(R.drawable.black_circler_container);
         eightStars.setBackgroundResource(R.drawable.black_circler_container);
         sixStars.setBackgroundResource(R.drawable.black_circler_container);
-        sevenStars.setBackgroundResource(R.drawable.black_circler_selected);
+        sevenStars.setBackgroundResource(R.drawable.second_button);
         stars = 7;
     }
 
@@ -83,7 +83,7 @@ public class FilterActivity extends AppCompatActivity {
         nineStars.setBackgroundResource(R.drawable.black_circler_container);
         sixStars.setBackgroundResource(R.drawable.black_circler_container);
         sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-        eightStars.setBackgroundResource(R.drawable.black_circler_selected);
+        eightStars.setBackgroundResource(R.drawable.second_button);
         stars = 8;
     }
 
@@ -92,7 +92,7 @@ public class FilterActivity extends AppCompatActivity {
         sixStars.setBackgroundResource(R.drawable.black_circler_container);
         eightStars.setBackgroundResource(R.drawable.black_circler_container);
         sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-        nineStars.setBackgroundResource(R.drawable.black_circler_selected);
+        nineStars.setBackgroundResource(R.drawable.second_button);
         stars = 9;
     }
 
@@ -101,7 +101,7 @@ public class FilterActivity extends AppCompatActivity {
         nineStars.setBackgroundResource(R.drawable.black_circler_container);
         eightStars.setBackgroundResource(R.drawable.black_circler_container);
         sevenStars.setBackgroundResource(R.drawable.black_circler_container);
-        tenStars.setBackgroundResource(R.drawable.black_circler_selected);
+        tenStars.setBackgroundResource(R.drawable.second_button);
         stars = 10;
     }
 
@@ -154,7 +154,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     lockersSelected = true;
-                    lockersFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    lockersFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
@@ -167,7 +167,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     wifiSelected = true;
-                    wifiFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    wifiFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
@@ -180,7 +180,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     breakfastSelected = true;
-                    breakfastFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    breakfastFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
@@ -193,7 +193,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     barSelected = true;
-                    barFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    barFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
@@ -206,7 +206,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     luggageSelected = true;
-                    luggageFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    luggageFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
@@ -219,7 +219,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     airSelected = true;
-                    airFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    airFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
@@ -232,7 +232,7 @@ public class FilterActivity extends AppCompatActivity {
 
                 } else {
                     swimmingSelected = true;
-                    swimmingFilter.setBackgroundResource(R.drawable.black_circler_selected);
+                    swimmingFilter.setBackgroundResource(R.drawable.second_button);
                 }
             }
         });
