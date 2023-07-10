@@ -11,16 +11,14 @@
         android:id="@+id/recyclerViewBooking"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/navLayout"
         tools:listitem="@layout/booking_card" />
 
     <LinearLayout
+        android:id="@+id/navLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:background="?attr/colorPrimary"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_alignParentBottom="true">
 
         <ImageButton
 
