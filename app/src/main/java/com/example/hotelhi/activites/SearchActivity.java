@@ -182,6 +182,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
             @Override
             public void onClick(View view) {
 
+
             }
         });
 

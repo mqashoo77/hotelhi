@@ -37,6 +37,7 @@ public class SortActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(SortActivity.this, SearchActivity.class);
                 startActivity(intent);
             }
