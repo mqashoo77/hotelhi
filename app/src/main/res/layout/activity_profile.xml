@@ -226,7 +226,15 @@
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@drawable/main_button"
-            android:text="Edit Profile"
+            android:text="@string/edit_profile"
+            android:textColor="#0C0404" />
+
+        <Button
+            android:id="@+id/profileLogoutButton"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_button"
+            android:text="@string/logout"
             android:textColor="#0C0404" />
 
     </LinearLayout>

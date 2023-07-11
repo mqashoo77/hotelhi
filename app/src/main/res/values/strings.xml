@@ -17,4 +17,6 @@
     <string name="has_account">I have an account</string>
     <string name="bookings_title">My Bookings</string>
     <string name="home_title">Let the adventure Begins!</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">logout</string>
 </resources>
