@@ -99,7 +99,7 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
                 for (DataSnapshot data : snapshot.getChildren()) {
                     Hotel h = data.getValue(Hotel.class);
                     hotels.add(h);
-                    System.out.println(h.getAddress().toString());
+//                    System.out.println(h.getAddress().toString());
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -120,6 +120,8 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewInter
     public void onItemClick(int position) {
         Intent intent = new Intent(HomeActivity.this, HotelDetailsActivity.class);
         intent.putExtra("Hotel_id", hotels.get(position).getHotelId());
+        System.out.println(hotels.get(position).getHotelId());
+
         startActivity(intent);
 
 

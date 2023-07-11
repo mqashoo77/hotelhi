@@ -332,8 +332,7 @@ public class SearchActivity extends AppCompatActivity implements RecyclerViewInt
         RecyclerView recyclerView = findViewById(R.id.recyclerViewSearch);
         setItems();
         setNavigation();
-
-        hotels = new ArrayList<>();
+        hotels = HotelService.getHotels();
         Hotel_RecyclerViewAdapter adapter = new Hotel_RecyclerViewAdapter(this, hotels, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

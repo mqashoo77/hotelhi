@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.hotelhi.R;
 import com.example.hotelhi.adapter.BookingsAdapter;
@@ -28,6 +29,7 @@ public class BookingManagementActivity extends AppCompatActivity {
     ImageButton homeNavigationButton;
     ImageButton searchNavigationButton;
     ImageButton manageNavigationBookingButton;
+    ImageView personalImage;
 
 
     @Override
@@ -35,6 +37,7 @@ public class BookingManagementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_management);
         setNavigation();
+        personalImage = findViewById(R.id.homePersonalPhoto);
 
         // Initialize RecyclerView
         recyclerView = findViewById(R.id.recyclerViewBooking);
