@@ -44,6 +44,8 @@ public class HotelService {
         return hotels;
     }
     public static Hotel getHotelById(int id){
+
+        /**easy do don*/
         Hotel hotel=new Hotel(1, "Hilton London Metropole", "225 Edgware Road", "London", "United Kingdom", "+44 20 7402 4141", "info@hiltonlondonmet.com", "main_image_a.jpg", 2, 500, 8.4);
         return hotel;
     }
@@ -74,6 +76,7 @@ public class HotelService {
     }
 
     public static void bookRoom(Booking booking){
+        /**easy insert a booking but need some modifiactions*/
         long timeDiff = booking.getCheckOutDate().getTime() - booking.getCheckOutDate().getTime();
 
         long daysDifference = TimeUnit.MILLISECONDS.toDays(timeDiff);
@@ -82,6 +85,16 @@ public class HotelService {
     }
 
     public static ArrayList<Hotel>filterHotel(Date chickIn,Date chickOut,String city,int numOfGuests,int stars,String sort,int priceFrom,int priceTo){
+        /******
+         *
+         *
+         * very complex if possible first get all the rooms that can take more than the number of guests
+         * then where priceFrom pernight >=pricefrom and max <=to then city=city then
+         * then take from that the rooms that are not booked in the dates from chick in to chick out day by day then we want if sort !=""
+         * order by the sort
+         */
+
+
         ArrayList<Hotel>hotels=new ArrayList<>();
         {
             hotels.add(new Hotel(1, "Hilton London Metropole", "225 Edgware Road", "London", "United Kingdom", "+44 20 7402 4141", "info@hiltonlondonmet.com", "main_image_a.jpg", 2, 500, 8.4));
@@ -104,6 +117,13 @@ public class HotelService {
 
     }
     public static ArrayList<Hotel> getBestHotels(){
+
+        /****************************
+         *
+         *
+         * get the best 5 hotels in term of ratings (highest 5 rating hotels)
+         */
+
         ArrayList<Hotel>hotels=new ArrayList<>();
         {
             hotels.add(new Hotel(1, "Hilton London Metropole", "225 Edgware Road", "London", "United Kingdom", "+44 20 7402 4141", "info@hiltonlondonmet.com", "main_image_a.jpg", 2, 500, 8.4));
@@ -125,6 +145,11 @@ public class HotelService {
         return hotels;
     }
     public static ArrayList<Hotel> getByCity(String s){
+
+
+        /*************
+         * get the hotel with the given city name
+         */
         ArrayList<Hotel>hotels=new ArrayList<>();
         {
             hotels.add(new Hotel(1, "Hilton London Metropole", "225 Edgware Road", "London", "United Kingdom", "+44 20 7402 4141", "info@hiltonlondonmet.com", "main_image_a.jpg", 2, 500, 8.4));
