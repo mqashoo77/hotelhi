@@ -1,13 +1,10 @@
 package com.example.hotelhi.activites;
 
 
-//import static com.hbb20.countrypicker.dialog.CPDialogExtensionKt.launchCountryPickerDialog;
-
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,8 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.HashMap;
-//import com.hbb20.CountryPickerView;
-//import com.hbb20.countrypicker.models.CPCountry;
 
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -57,64 +52,49 @@ public class RegistrationActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String txtUserFirstName = userFirstName.getText().toString();
-                String txtUserLastName = userLastName.getText().toString();
-                String txtUserPhoneNumber = userPhoneNumber.getText().toString();
-                String txtUserEmail = userEmail.getText().toString();
-                String txtUserPassword = userPassword.getText().toString();
+        register.setOnClickListener(view -> {
+            String txtUserFirstName = userFirstName.getText().toString();
+            String txtUserLastName = userLastName.getText().toString();
+            String txtUserPhoneNumber = userPhoneNumber.getText().toString();
+            String txtUserEmail = userEmail.getText().toString();
+            String txtUserPassword = userPassword.getText().toString();
 
-                if (TextUtils.isEmpty(txtUserFirstName) || TextUtils.isEmpty(txtUserLastName)
-                        || TextUtils.isEmpty(txtUserPhoneNumber) || TextUtils.isEmpty(txtUserEmail)
-                        || TextUtils.isEmpty(txtUserPassword)){
-                    Toast.makeText(RegistrationActivity.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
-                } else if (txtUserPassword.length() < 6){
-                    Toast.makeText(RegistrationActivity.this, "Password too short!", Toast.LENGTH_SHORT).show();
-                } else {
-                    registerUser(txtUserFirstName , txtUserLastName , txtUserPhoneNumber , txtUserEmail,txtUserPassword);
-                }
+            if (TextUtils.isEmpty(txtUserFirstName) || TextUtils.isEmpty(txtUserLastName)
+                    || TextUtils.isEmpty(txtUserPhoneNumber) || TextUtils.isEmpty(txtUserEmail)
+                    || TextUtils.isEmpty(txtUserPassword)){
+                Toast.makeText(RegistrationActivity.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
+            } else if (txtUserPassword.length() < 6){
+                Toast.makeText(RegistrationActivity.this, "Password too short!", Toast.LENGTH_SHORT).show();
+            } else {
+                registerUser(txtUserFirstName , txtUserLastName , txtUserPhoneNumber , txtUserEmail,txtUserPassword);
             }
         });
 
     }
     private void registerUser(final String firstName, final String lastName, final String phoneNumber, final String email, String password) {
 
-        auth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
+        auth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(authResult -> {
 
-                HashMap<String , Object> map = new HashMap<>();
-                map.put("First Name" , firstName);
-                map.put("Last Name", lastName);
-                map.put("Phone Number", phoneNumber);
-                map.put("Email", email);
-                map.put("Password",password);
-                map.put("id" , auth.getCurrentUser().getUid());
+            HashMap<String , Object> map = new HashMap<>();
+            map.put("First Name" , firstName);
+            map.put("Last Name", lastName);
+            map.put("Phone Number", phoneNumber);
+            map.put("Email", email);
+            map.put("Password",password);
+            map.put("id" , auth.getCurrentUser().getUid());
 
 
-                mRootRef.child("Users").child(auth.getCurrentUser().getUid()).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(RegistrationActivity.this,
-                                    "Success", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegistrationActivity.this , LoginActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }
-                });
+            mRootRef.child("Users").child(auth.getCurrentUser().getUid()).setValue(map).addOnCompleteListener(task -> {
+                if (task.isSuccessful()){
+                    Toast.makeText(RegistrationActivity.this,
+                            "Success", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegistrationActivity.this , LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-
-                Toast.makeText(RegistrationActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e -> Toast.makeText(RegistrationActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show());
 
     }
 }
