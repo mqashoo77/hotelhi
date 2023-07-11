@@ -66,7 +66,9 @@ public class HotelDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hotel_details);
         Intent intent=getIntent();
         int hotelId = intent.getIntExtra("Hotel_id", 1);
+        System.out.println(hotelId+"Hotel I");
         hotel=HotelService.getHotelById(hotelId);
+        System.out.println(hotel.getName());
         setItems();
 
 

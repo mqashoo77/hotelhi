@@ -24,8 +24,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private Button login;
-
     private Button dontHaveAccount;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +49,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        dontHaveAccount.setOnClickListener(view -> {
-            Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-            startActivity(intent);
+
+        dontHaveAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
         });
 
 

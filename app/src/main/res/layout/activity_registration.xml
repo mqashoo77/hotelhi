@@ -15,24 +15,26 @@
             style="@style/editTextStyle"
             android:hint="@string/first_name_hint"
             android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#050202"
             app:layout_constraintBottom_toTopOf="@id/editTextLastName"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
         <EditText
             android:id="@+id/editTextLastName"
             style="@style/editTextStyle"
             android:hint="@string/last_name_hint"
             android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toBottomOf="@id/editTextFirstName"
+            android:textColor="#0C0404"
             app:layout_constraintBottom_toTopOf="@id/countryPicker"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextFirstName"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
         <Spinner
             android:id="@+id/countryPicker"
@@ -50,25 +52,26 @@
             style="@style/editTextStyle"
             android:hint="@string/phone_number_hint"
             android:inputType="phone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toBottomOf="@id/countryPicker"
+            android:textColor="#0C0505"
             app:layout_constraintBottom_toTopOf="@id/editTextEmail"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countryPicker"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
         <EditText
             android:id="@+id/editTextEmail"
             style="@style/editTextStyle"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber"
+            android:textColor="#0B0303"
             app:layout_constraintBottom_toTopOf="@id/editTextPassword"
-            app:layout_constraintVertical_bias="0.5" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
 
         <EditText
@@ -76,12 +79,13 @@
             style="@style/editTextStyle"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toBottomOf="@id/editTextEmail"
+            android:textColor="#0C0404"
             app:layout_constraintBottom_toTopOf="@id/buttonRegister"
-            app:layout_constraintVertical_bias="0.5"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmail"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
         <Button
             android:id="@+id/buttonRegister"
