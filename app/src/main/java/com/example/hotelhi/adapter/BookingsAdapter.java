@@ -75,6 +75,18 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.ViewHo
         return bookings.size();
     }
 
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public void setHotels(List<Hotel> hotels) {
+        this.hotels = hotels;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageRoom;
         public TextView txtHotelName;

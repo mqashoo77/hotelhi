@@ -30,7 +30,7 @@ public class BookingManagementActivity extends AppCompatActivity {
     ImageButton searchNavigationButton;
     ImageButton manageNavigationBookingButton;
     ImageView personalImage;
-
+    private Thread databaseThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +43,51 @@ public class BookingManagementActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewBooking);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Initialize the lists of bookings, rooms, and hotels
-        bookings = getBookingsFromDatabase();
-        rooms = getRoomsFromDatabase();
-        hotels = getHotelsFromDatabase();
-
-        // Create and set the adapter
-        adapter = new BookingsAdapter(bookings, rooms, hotels);
-        recyclerView.setAdapter(adapter);
-
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Start a new thread to retrieve the lists from the database
+        databaseThread = new Thread(() -> {
+            // Retrieve the lists of bookings, rooms, and hotels
+            List<Booking> fetchedBookings = getBookingsFromDatabase();
+            List<Room> fetchedRooms = getRoomsFromDatabase();
+            List<Hotel> fetchedHotels = getHotelsFromDatabase();
+
+            // Update the UI on the main thread
+            runOnUiThread(() -> {
+                // Update the member variables with the retrieved lists
+                bookings = fetchedBookings;
+                rooms = fetchedRooms;
+                hotels = fetchedHotels;
+
+                // Update the adapter with the retrieved lists
+                adapter = new BookingsAdapter(bookings, rooms, hotels);
+                recyclerView.setAdapter(adapter);
+            });
+        });
+
+        // Start the database thread
+        databaseThread.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        // Interrupt and join the database thread to gracefully stop it
+        if (databaseThread != null) {
+            databaseThread.interrupt();
+            try {
+                databaseThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     private List<Hotel> getHotelsFromDatabase() {
         // MOMEN -> Qashoo: return all hotels
