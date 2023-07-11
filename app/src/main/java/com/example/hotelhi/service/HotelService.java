@@ -17,6 +17,9 @@ import java.util.concurrent.TimeUnit;
 public class HotelService {
 
     public static User getUserById(int id){
+        /**
+         * easey please implement
+         */
         User user=new User(1,"Mohammed","Buirat","Palestine","0594056401",
                 "mohammadberat@yahoo.com","");
         return user;
@@ -45,7 +48,7 @@ public class HotelService {
     }
     public static Hotel getHotelById(int id){
 
-        /**easy do don*/
+        /**easy done*/
         Hotel hotel=new Hotel(1, "Hilton London Metropole", "225 Edgware Road", "London", "United Kingdom", "+44 20 7402 4141", "info@hiltonlondonmet.com", "main_image_a.jpg", 2, 500, 8.4);
         return hotel;
     }
