@@ -16,6 +16,12 @@ import java.util.concurrent.TimeUnit;
 
 public class HotelService {
 
+    public static User getUserById(int id){
+        User user=new User(1,"Mohammed","Buirat","Palestine","0594056401",
+                "mohammadberat@yahoo.com","");
+        return user;
+    }
+
     public static ArrayList<Hotel> getHotels(){
         ArrayList<Hotel>hotels=new ArrayList<>();
         {

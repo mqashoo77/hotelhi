@@ -15,24 +15,26 @@
             style="@style/editTextStyle"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#120707"
             app:layout_constraintBottom_toTopOf="@id/editTextPassword"
-            app:layout_constraintVertical_bias="0.5"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
         <EditText
             android:id="@+id/editTextPassword"
             style="@style/editTextStyle"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.8"
-            app:layout_constraintTop_toBottomOf="@id/editTextEmail"
+            android:textColor="#100808"
             app:layout_constraintBottom_toTopOf="@id/buttonLogin"
-            app:layout_constraintVertical_bias="0.5"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmail"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent="0.8" />
 
         <Button
             android:id="@+id/buttonLogin"
