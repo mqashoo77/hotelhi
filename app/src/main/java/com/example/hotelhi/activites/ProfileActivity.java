@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
     User user;
     TextView name1,name2,number,email,country;
     ImageView image;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         email=findViewById(R.id.profileEmail);
         country=findViewById(R.id.profileCountry);
         image=findViewById(R.id.profilePicture);
-
+        backBtn=findViewById(R.id.profileBackBtn);
         SharedPreferences sharedPreferences=getSharedPreferences("myPrefs",MODE_PRIVATE);
         int id=sharedPreferences.getInt("user_id",1);
         user= HotelService.getUserById(1);
@@ -35,6 +37,12 @@ public class ProfileActivity extends AppCompatActivity {
         number.setText(user.getPhoneNumber());
         email.setText(user.getEmail());
         country.setText(user.getCountry());
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed(); // Invoke default back button behavior
+            }
+        });
 
     }
 }
