@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private Button login;
+    private Button dontHaveAccount;
 
 
     @Override
@@ -32,9 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        email = findViewById(R.id.editTextEmail);
-        password = findViewById(R.id.editTextPassword);
+        email = findViewById(R.id.editTextEmailLogin);
+        password = findViewById(R.id.editTextPasswordLogin);
         login = findViewById(R.id.buttonLogin);
+        dontHaveAccount = findViewById(R.id.buttonNoAccount);
         mAuth = FirebaseAuth.getInstance();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,16 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     loginUser(txt_email, txt_password);
                 }
+            }
+        });
+
+        dontHaveAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

@@ -16,7 +16,7 @@ public class Hotel {
     public int getNumOfRatings() {
         return numOfRatings;
     }
-
+    public Hotel(){}
     public void setNumOfRatings(int numOfRatings) {
         this.numOfRatings = numOfRatings;
     }
@@ -29,7 +29,7 @@ public class Hotel {
         this.ratings = ratings;
     }
 
-    public Hotel(int hotelId, String name, String address, String city, String country, String phoneNumber, String email, String mainImage, int distanceFromCenter, int numOfRatings, double ratings) {
+    public Hotel(String address, String city, String country, int distanceFromCenter,String email, int hotelId, String mainImage, String name, int numOfRatings, String phoneNumber,  double ratings) {
         this.hotelId = hotelId;
         this.name = name;
         this.address = address;
